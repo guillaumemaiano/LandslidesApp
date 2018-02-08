@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -19,7 +20,8 @@ android {
         buildTypes.each {
         //        it.buildConfigField 'String', 'APP_KEY_1', AppKey
         //        it.resValue 'string', 'APP_KEY_2', AppKey
-            it.resValue "string", "NasaApiKey", credentials.NASA_API_Key
+            def key = credentials.NASA_API_Key ?: "Key missing"
+            it.resValue "string", "NasaApiKey", key
         }
         release {
             minifyEnabled false
@@ -40,7 +42,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.google.dagger:dagger:2.4'
+    implementation 'com.google.dagger:dagger:2.4'
     kapt 'com.google.dagger:dagger-compiler:2.4'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
 }
