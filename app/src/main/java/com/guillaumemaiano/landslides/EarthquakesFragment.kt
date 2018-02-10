@@ -12,17 +12,24 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.guillaumemaiano.landslides.Extensions.inflate
+import kotlinx.android.synthetic.main.landslides_fragment.*
 
 class EarthquakesFragment: Fragment() {
 
     private var quakesList: RecyclerView? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val view = inflater?.inflate(R.layout.landslides_fragment, container,false) ?: super.onCreateView(inflater, container, savedInstanceState)
+        val view = container?.inflate(R.layout.landslides_fragment) ?: super.onCreateView(inflater, container, savedInstanceState)
         quakesList = view?.findViewById(R.id.landslides_list)
-        quakesList?.setHasFixedSize(true) // use this setting to improve performance
-        quakesList?.layoutManager = LinearLayoutManager(context) // forces API level 23
         return view
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        // use synthetic properties
+        landslides_list.setHasFixedSize(true) // use this setting to improve performance
+        landslides_list.layoutManager = LinearLayoutManager(context) // forces API level 23
     }
 
 }
