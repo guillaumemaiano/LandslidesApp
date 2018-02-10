@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Date, country if available, trigger -->
+    <TextView android:id="@+id/date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/description"
+        android:layout_below="@+id/description"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp"
+        tools:text="If known, when the landslides happened." />
+    <TextView android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        tools:text="If known, where the landslides happened." />
+    <TextView android:id="@+id/trigger"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/description"
+        android:layout_below="@+id/description"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp"
+        tools:text="If known, what caused the landslide." />
+</android.support.RelativeLayout>
