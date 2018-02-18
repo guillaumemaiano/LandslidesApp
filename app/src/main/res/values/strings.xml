@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Landslides</string>
+    <string name="tab_list_text">Events</string>
+    <string name="tab_map_text">Map</string>
 </resources>
