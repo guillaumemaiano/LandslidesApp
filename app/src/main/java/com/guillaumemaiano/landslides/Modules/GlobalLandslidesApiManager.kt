@@ -16,9 +16,10 @@ public class GlobalLandslidesApiManager constructor(instancingActivity: AppCompa
     val _activity = instancingActivity
 
     fun test() {
+        val MapsKeys = _activity.resources.getString(R.string.GoogleMapsApiKey)
+        Log.i("Maps:", MapsKeys)
 
-
-    val NasaApiKey: String =  _activity.resources.getString(R.string.NasaApiKey)
+        val NasaApiKey: String =  _activity.resources.getString(R.string.NasaApiKey)
         Log.i("Key", NasaApiKey)
 
     }

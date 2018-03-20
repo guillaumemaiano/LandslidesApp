@@ -30,6 +30,7 @@ class EarthquakesFragment: Fragment() {
         // use synthetic properties
         landslides_list.setHasFixedSize(true) // use this setting to improve performance
         landslides_list.layoutManager = LinearLayoutManager(context) // forces API level 23
+
     }
 
 }
